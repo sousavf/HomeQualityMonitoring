@@ -10,69 +10,74 @@ MQ135 gasSensor = MQ135(0);
 dht DHT;
 
 // Radio pipe addresses for the 2 nodes to communicate.
-const uint64_t pipes[2] = { 0xF0F0F0F0E1LL, 0xF0F0F0F0D2LL };
+const uint64_t pipes[3] = { 0xF0F0F0F0E1LL, 0xF0F0F0F0D2LL, 0xF0F0F0F0C2LL };
 
-const int max_payload_size = 64;
+const int max_payload_size = 32;
 
 char receive_payload[max_payload_size+1]; // +1 to allow room for a terminating NULL char
 
 #define DHT11_PIN 2
 #define LIGHT_SENSOR_PIN A1
 
+struct dataStruct {
+	int id = 0x01;
+	float g1;
+	float l1;
+	float h1;
+	float t1;
+} transmit_data; 
+
+unsigned char ADDRESS[5] = {
+	0xb1,
+	0x43,
+	0x88,
+	0x99,
+	0x45
+};
+	
 void setup(void)
 {
   Serial.begin(115200);
   radio.begin();
   radio.enableDynamicPayloads();
-  radio.setRetries(5,15);
-  radio.openWritingPipe(pipes[0]);
-  radio.openReadingPipe(1,pipes[1]);
+  radio.setRetries(15,15);
+  radio.openWritingPipe(pipes[2]);
+  radio.openReadingPipe(0,pipes[1]);
   radio.startListening();
   radio.printDetails();
 }
 
-
 void loop(void)
 {
-  int chk = DHT.read11(DHT11_PIN);
+	int chk = DHT.read11(DHT11_PIN);
 	float rawGas = gasSensor.getResistance();
 	float rawLight = analogRead(LIGHT_SENSOR_PIN);
-  float rawHumidity = DHT.humidity;
-  float rawTemperature = DHT.temperature;
+	float rawHumidity = DHT.humidity;
+	float rawTemperature = DHT.temperature;
 
-  char dataFinal[max_payload_size];
+	transmit_data.g1 = rawGas;
+	transmit_data.l1 = rawLight;
+	transmit_data.h1 = rawHumidity;
+	transmit_data.t1 = rawTemperature;
 
-  char sensorId[7] = "5ND1HU";
+	// First, stop listening so we can talk.
+	radio.stopListening();
 
-  char rawGasChar[8];
-  dtostrf(rawGas, 6, 2, rawGasChar);
-  char rawLightChar[8];
-  dtostrf(rawLight, 6, 2, rawLightChar);
-  char rawHumidityChar[8];
-  dtostrf(rawHumidity, 6, 2, rawHumidityChar);
-  char rawTemperatureChar[8];
-  dtostrf(rawTemperature, 6, 2, rawTemperatureChar);
-  sprintf(dataFinal,"%s:AQ=%s;HM=%s;TP=%s;LI=%s",sensorId,rawGasChar,rawHumidityChar,rawTemperatureChar,rawLightChar);
+	char teste[] = "teste";
 
-  Serial.println(dataFinal);
+	// Take the time, and send it.  This will block until complete
+	Serial.print(F("Now sending length "));
+//	radio.write(&transmit_data, sizeof(transmit_data));
+	radio.write(teste, sizeof(teste));
 
-	  unsigned int payload_size = (unsigned)strlen(dataFinal);
-    Serial.println(payload_size);
-    // First, stop listening so we can talk.
-    radio.stopListening();
+	// Now, continue listening
+	radio.startListening();
 
-    // Take the time, and send it.  This will block until complete
-    Serial.print(F("Now sending length "));
-    radio.write(dataFinal, payload_size );
-
-    // Now, continue listening
-    radio.startListening();
-
-    // Wait here until we get a response, or timeout
-    unsigned long started_waiting_at = millis();
-    bool timeout = false;
-    while ( ! radio.available() && ! timeout )
-      if (millis() - started_waiting_at > 500 )
+	// Wait here until we get a response, or timeout
+	unsigned long started_waiting_at = millis();
+	bool timeout = false;
+	while ( ! radio.available() && ! timeout )
+		if (millis() - started_waiting_at > 500 )
         timeout = true;
 
     // Describe the results
@@ -103,7 +108,7 @@ void loop(void)
     }
 
     // Try again 1s later
-    delay(10000);
+    delay(5000);
   
 
 }

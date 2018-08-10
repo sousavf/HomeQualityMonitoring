@@ -1,0 +1,356 @@
+2018-08-10 16:23:16,425 INFO     Starting Soil Moisture Sensor Receiver
+2018-08-10 16:23:16,428 INFO     Starting Home Automation RF Receiver service
+2018-08-10 16:23:16,556 INFO     Role: Pong Back, awaiting transmission
+2018-08-10 16:23:28,149 ERROR    Traceback (most recent call last):
+2018-08-10 16:23:28,151 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 861, in emit
+2018-08-10 16:23:28,159 ERROR        msg = self.format(record)
+2018-08-10 16:23:28,162 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 734, in format
+2018-08-10 16:23:28,164 ERROR        return fmt.format(record)
+2018-08-10 16:23:28,167 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 465, in format
+2018-08-10 16:23:28,169 ERROR        record.message = record.getMessage()
+2018-08-10 16:23:28,172 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 329, in getMessage
+2018-08-10 16:23:28,175 ERROR        msg = msg % self.args
+2018-08-10 16:23:28,177 ERROR    TypeError: not all arguments converted during string formatting
+2018-08-10 16:23:28,180 ERROR    Logged from file HomeSensorRFReceiver.py, line 84
+2018-08-10 16:23:28,182 INFO     Got payload size=6 value="698.00"
+2018-08-10 16:23:28,189 INFO     Sent response.
+2018-08-10 16:23:28,192 ERROR    Traceback (most recent call last):
+2018-08-10 16:23:28,195 ERROR      File "./HomeSensorRFReceiver.py", line 141, in <module>
+2018-08-10 16:23:28,197 ERROR    try_read_data()
+2018-08-10 16:23:28,200 ERROR      File "./HomeSensorRFReceiver.py", line 99, in try_read_data
+2018-08-10 16:23:28,202 ERROR    x.execute("""INSERT INTO measure (measureDate, sensor_id, soil_moisture) VALUES (%s,%s,%s)""",(time.strftime('%Y-%m-%d %H:%M:%S'),'SM01',soil_moisture))
+2018-08-10 16:23:28,205 ERROR    UnboundLocalError
+2018-08-10 16:23:28,207 ERROR    :
+2018-08-10 16:23:28,210 ERROR    local variable 'x' referenced before assignment
+2018-08-10 16:27:21,844 INFO     Starting Soil Moisture Sensor Receiver
+2018-08-10 16:27:21,848 INFO     Starting Home Automation RF Receiver service
+2018-08-10 16:27:21,975 INFO     Role: Pong Back, awaiting transmission
+2018-08-10 16:27:29,614 ERROR    Traceback (most recent call last):
+2018-08-10 16:27:30,023 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 861, in emit
+2018-08-10 16:27:30,031 ERROR        msg = self.format(record)
+2018-08-10 16:27:30,034 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 734, in format
+2018-08-10 16:27:30,037 ERROR        return fmt.format(record)
+2018-08-10 16:27:30,039 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 465, in format
+2018-08-10 16:27:30,041 ERROR        record.message = record.getMessage()
+2018-08-10 16:27:30,043 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 329, in getMessage
+2018-08-10 16:27:30,046 ERROR        msg = msg % self.args
+2018-08-10 16:27:30,049 ERROR    TypeError: not all arguments converted during string formatting
+2018-08-10 16:27:30,051 ERROR    Logged from file HomeSensorRFReceiver.py, line 86
+2018-08-10 16:27:30,054 INFO     Got payload size=6 value="698.00"
+2018-08-10 16:27:30,061 INFO     Sent response.
+2018-08-10 16:27:30,063 INFO     698.0
+2018-08-10 16:27:30,066 ERROR    Traceback (most recent call last):
+2018-08-10 16:27:30,068 ERROR      File "./HomeSensorRFReceiver.py", line 145, in <module>
+2018-08-10 16:27:30,071 ERROR    try_read_data()
+2018-08-10 16:27:30,073 ERROR      File "./HomeSensorRFReceiver.py", line 102, in try_read_data
+2018-08-10 16:27:30,076 ERROR    if x:
+2018-08-10 16:27:30,078 ERROR    UnboundLocalError
+2018-08-10 16:27:30,080 ERROR    :
+2018-08-10 16:27:30,083 ERROR    local variable 'x' referenced before assignment
+2018-08-10 16:30:14,974 INFO     Starting Soil Moisture Sensor Receiver
+2018-08-10 16:30:14,978 INFO     Starting Home Automation RF Receiver service
+2018-08-10 16:30:15,105 INFO     Role: Pong Back, awaiting transmission
+2018-08-10 16:30:17,853 ERROR    Traceback (most recent call last):
+2018-08-10 16:30:17,855 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 861, in emit
+2018-08-10 16:30:17,863 ERROR        msg = self.format(record)
+2018-08-10 16:30:17,866 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 734, in format
+2018-08-10 16:30:17,868 ERROR        return fmt.format(record)
+2018-08-10 16:30:17,871 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 465, in format
+2018-08-10 16:30:17,873 ERROR        record.message = record.getMessage()
+2018-08-10 16:30:17,876 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 329, in getMessage
+2018-08-10 16:30:17,878 ERROR        msg = msg % self.args
+2018-08-10 16:30:17,881 ERROR    TypeError: not all arguments converted during string formatting
+2018-08-10 16:30:17,883 ERROR    Logged from file HomeSensorRFReceiver.py, line 87
+2018-08-10 16:30:17,886 INFO     Got payload size=6 value="698.00"
+2018-08-10 16:30:17,890 INFO     Sent response.
+2018-08-10 16:30:17,892 INFO     698.0
+2018-08-10 16:30:17,894 ERROR    Traceback (most recent call last):
+2018-08-10 16:30:17,897 ERROR      File "./HomeSensorRFReceiver.py", line 146, in <module>
+2018-08-10 16:30:17,900 ERROR    try_read_data()
+2018-08-10 16:30:17,902 ERROR      File "./HomeSensorRFReceiver.py", line 103, in try_read_data
+2018-08-10 16:30:17,905 ERROR    if x:
+2018-08-10 16:30:17,907 ERROR    UnboundLocalError
+2018-08-10 16:30:17,910 ERROR    :
+2018-08-10 16:30:17,912 ERROR    local variable 'x' referenced before assignment
+2018-08-10 16:34:14,281 INFO     Starting Soil Moisture Sensor Receiver
+2018-08-10 16:34:14,284 INFO     Starting Home Automation RF Receiver service
+2018-08-10 16:34:14,414 INFO     Role: Pong Back, awaiting transmission
+2018-08-10 16:34:29,815 ERROR    Traceback (most recent call last):
+2018-08-10 16:34:29,817 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 861, in emit
+2018-08-10 16:34:29,825 ERROR        msg = self.format(record)
+2018-08-10 16:34:29,828 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 734, in format
+2018-08-10 16:34:29,830 ERROR        return fmt.format(record)
+2018-08-10 16:34:29,832 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 465, in format
+2018-08-10 16:34:29,835 ERROR        record.message = record.getMessage()
+2018-08-10 16:34:29,837 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 329, in getMessage
+2018-08-10 16:34:29,840 ERROR        msg = msg % self.args
+2018-08-10 16:34:29,842 ERROR    TypeError: not all arguments converted during string formatting
+2018-08-10 16:34:29,845 ERROR    Logged from file HomeSensorRFReceiver.py, line 84
+2018-08-10 16:34:29,848 INFO     Got payload size=6 value="698.00"
+2018-08-10 16:34:29,853 INFO     Sent response.
+2018-08-10 16:34:29,855 INFO     698.0
+2018-08-10 16:34:29,858 ERROR    Traceback (most recent call last):
+2018-08-10 16:34:29,861 ERROR      File "./HomeSensorRFReceiver.py", line 143, in <module>
+2018-08-10 16:34:29,863 ERROR    try_read_data()
+2018-08-10 16:34:29,866 ERROR      File "./HomeSensorRFReceiver.py", line 100, in try_read_data
+2018-08-10 16:34:29,869 ERROR    if x:
+2018-08-10 16:34:29,871 ERROR    UnboundLocalError
+2018-08-10 16:34:29,874 ERROR    :
+2018-08-10 16:34:29,876 ERROR    local variable 'x' referenced before assignment
+2018-08-10 16:37:47,837 INFO     Starting Soil Moisture Sensor Receiver
+2018-08-10 16:37:47,840 INFO     Starting Home Automation RF Receiver service
+2018-08-10 16:37:47,968 INFO     Role: Pong Back, awaiting transmission
+2018-08-10 16:37:49,201 ERROR    Traceback (most recent call last):
+2018-08-10 16:37:49,204 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 861, in emit
+2018-08-10 16:37:49,212 ERROR        msg = self.format(record)
+2018-08-10 16:37:49,214 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 734, in format
+2018-08-10 16:37:49,217 ERROR        return fmt.format(record)
+2018-08-10 16:37:49,220 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 465, in format
+2018-08-10 16:37:49,222 ERROR        record.message = record.getMessage()
+2018-08-10 16:37:49,224 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 329, in getMessage
+2018-08-10 16:37:49,227 ERROR        msg = msg % self.args
+2018-08-10 16:37:49,230 ERROR    TypeError: not all arguments converted during string formatting
+2018-08-10 16:37:49,232 ERROR    Logged from file HomeSensorRFReceiver.py, line 84
+2018-08-10 16:37:49,235 INFO     Got payload size=6 value="698.00"
+2018-08-10 16:37:49,238 INFO     Sent response.
+2018-08-10 16:37:49,241 INFO     698.0
+2018-08-10 16:37:49,244 ERROR    Traceback (most recent call last):
+2018-08-10 16:37:49,246 ERROR      File "./HomeSensorRFReceiver.py", line 143, in <module>
+2018-08-10 16:37:49,249 ERROR    try_read_data()
+2018-08-10 16:37:49,251 ERROR      File "./HomeSensorRFReceiver.py", line 100, in try_read_data
+2018-08-10 16:37:49,254 ERROR    if x is not None:
+2018-08-10 16:37:49,257 ERROR    UnboundLocalError
+2018-08-10 16:37:49,260 ERROR    :
+2018-08-10 16:37:49,262 ERROR    local variable 'x' referenced before assignment
+2018-08-10 16:40:06,579 INFO     Starting Soil Moisture Sensor Receiver
+2018-08-10 16:40:06,582 INFO     Starting Home Automation RF Receiver service
+2018-08-10 16:40:06,710 INFO     Role: Pong Back, awaiting transmission
+2018-08-10 16:40:16,000 ERROR    Traceback (most recent call last):
+2018-08-10 16:40:16,003 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 861, in emit
+2018-08-10 16:40:16,010 ERROR        msg = self.format(record)
+2018-08-10 16:40:16,012 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 734, in format
+2018-08-10 16:40:16,015 ERROR        return fmt.format(record)
+2018-08-10 16:40:16,018 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 465, in format
+2018-08-10 16:40:16,020 ERROR        record.message = record.getMessage()
+2018-08-10 16:40:16,022 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 329, in getMessage
+2018-08-10 16:40:16,025 ERROR        msg = msg % self.args
+2018-08-10 16:40:16,028 ERROR    TypeError: not all arguments converted during string formatting
+2018-08-10 16:40:16,030 ERROR    Logged from file HomeSensorRFReceiver.py, line 84
+2018-08-10 16:40:16,033 INFO     Got payload size=6 value="698.00"
+2018-08-10 16:40:16,041 INFO     Sent response.
+2018-08-10 16:40:16,044 INFO     698.0
+2018-08-10 16:40:26,032 ERROR    Traceback (most recent call last):
+2018-08-10 16:40:26,034 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 861, in emit
+2018-08-10 16:40:26,037 ERROR        msg = self.format(record)
+2018-08-10 16:40:26,039 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 734, in format
+2018-08-10 16:40:26,042 ERROR        return fmt.format(record)
+2018-08-10 16:40:26,044 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 465, in format
+2018-08-10 16:40:26,047 ERROR        record.message = record.getMessage()
+2018-08-10 16:40:26,049 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 329, in getMessage
+2018-08-10 16:40:26,051 ERROR        msg = msg % self.args
+2018-08-10 16:40:26,054 ERROR    TypeError: not all arguments converted during string formatting
+2018-08-10 16:40:26,056 ERROR    Logged from file HomeSensorRFReceiver.py, line 84
+2018-08-10 16:40:26,059 INFO     Got payload size=6 value="698.00"
+2018-08-10 16:40:26,062 INFO     Sent response.
+2018-08-10 16:40:26,065 INFO     698.0
+2018-08-10 16:40:36,058 ERROR    Traceback (most recent call last):
+2018-08-10 16:40:36,060 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 861, in emit
+2018-08-10 16:40:36,063 ERROR        msg = self.format(record)
+2018-08-10 16:40:36,065 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 734, in format
+2018-08-10 16:40:36,068 ERROR        return fmt.format(record)
+2018-08-10 16:40:36,070 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 465, in format
+2018-08-10 16:40:36,073 ERROR        record.message = record.getMessage()
+2018-08-10 16:40:36,075 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 329, in getMessage
+2018-08-10 16:40:36,077 ERROR        msg = msg % self.args
+2018-08-10 16:40:36,080 ERROR    TypeError: not all arguments converted during string formatting
+2018-08-10 16:40:36,082 ERROR    Logged from file HomeSensorRFReceiver.py, line 84
+2018-08-10 16:40:36,085 INFO     Got payload size=6 value="698.00"
+2018-08-10 16:40:36,090 INFO     Sent response.
+2018-08-10 16:40:36,093 INFO     698.0
+2018-08-10 16:40:46,084 ERROR    Traceback (most recent call last):
+2018-08-10 16:40:46,087 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 861, in emit
+2018-08-10 16:40:46,089 ERROR        msg = self.format(record)
+2018-08-10 16:40:46,091 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 734, in format
+2018-08-10 16:40:46,094 ERROR        return fmt.format(record)
+2018-08-10 16:40:46,097 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 465, in format
+2018-08-10 16:40:46,099 ERROR        record.message = record.getMessage()
+2018-08-10 16:40:46,101 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 329, in getMessage
+2018-08-10 16:40:46,104 ERROR        msg = msg % self.args
+2018-08-10 16:40:46,107 ERROR    TypeError: not all arguments converted during string formatting
+2018-08-10 16:40:46,109 ERROR    Logged from file HomeSensorRFReceiver.py, line 84
+2018-08-10 16:40:46,112 INFO     Got payload size=6 value="698.00"
+2018-08-10 16:40:46,120 INFO     Sent response.
+2018-08-10 16:40:46,123 INFO     698.0
+2018-08-10 16:40:56,110 ERROR    Traceback (most recent call last):
+2018-08-10 16:40:56,113 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 861, in emit
+2018-08-10 16:40:56,115 ERROR        msg = self.format(record)
+2018-08-10 16:40:56,118 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 734, in format
+2018-08-10 16:40:56,120 ERROR        return fmt.format(record)
+2018-08-10 16:40:56,123 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 465, in format
+2018-08-10 16:40:56,125 ERROR        record.message = record.getMessage()
+2018-08-10 16:40:56,128 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 329, in getMessage
+2018-08-10 16:40:56,130 ERROR        msg = msg % self.args
+2018-08-10 16:40:56,132 ERROR    TypeError: not all arguments converted during string formatting
+2018-08-10 16:40:56,135 ERROR    Logged from file HomeSensorRFReceiver.py, line 84
+2018-08-10 16:40:56,138 INFO     Got payload size=6 value="698.00"
+2018-08-10 16:40:56,141 INFO     Sent response.
+2018-08-10 16:40:56,144 INFO     698.0
+2018-08-10 16:41:06,137 ERROR    Traceback (most recent call last):
+2018-08-10 16:41:06,139 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 861, in emit
+2018-08-10 16:41:06,141 ERROR        msg = self.format(record)
+2018-08-10 16:41:06,144 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 734, in format
+2018-08-10 16:41:06,146 ERROR        return fmt.format(record)
+2018-08-10 16:41:06,149 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 465, in format
+2018-08-10 16:41:06,151 ERROR        record.message = record.getMessage()
+2018-08-10 16:41:06,154 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 329, in getMessage
+2018-08-10 16:41:06,156 ERROR        msg = msg % self.args
+2018-08-10 16:41:06,159 ERROR    TypeError: not all arguments converted during string formatting
+2018-08-10 16:41:06,161 ERROR    Logged from file HomeSensorRFReceiver.py, line 84
+2018-08-10 16:41:06,164 INFO     Got payload size=6 value="698.00"
+2018-08-10 16:41:06,167 INFO     Sent response.
+2018-08-10 16:41:06,170 INFO     698.0
+2018-08-10 16:41:16,163 ERROR    Traceback (most recent call last):
+2018-08-10 16:41:16,165 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 861, in emit
+2018-08-10 16:41:16,168 ERROR        msg = self.format(record)
+2018-08-10 16:41:16,170 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 734, in format
+2018-08-10 16:41:16,173 ERROR        return fmt.format(record)
+2018-08-10 16:41:16,175 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 465, in format
+2018-08-10 16:41:16,178 ERROR        record.message = record.getMessage()
+2018-08-10 16:41:16,180 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 329, in getMessage
+2018-08-10 16:41:16,183 ERROR        msg = msg % self.args
+2018-08-10 16:41:16,185 ERROR    TypeError: not all arguments converted during string formatting
+2018-08-10 16:41:16,188 ERROR    Logged from file HomeSensorRFReceiver.py, line 84
+2018-08-10 16:41:16,190 INFO     Got payload size=6 value="698.00"
+2018-08-10 16:41:16,194 INFO     Sent response.
+2018-08-10 16:41:16,196 INFO     698.0
+2018-08-10 16:41:26,187 ERROR    Traceback (most recent call last):
+2018-08-10 16:41:26,190 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 861, in emit
+2018-08-10 16:41:26,192 ERROR        msg = self.format(record)
+2018-08-10 16:41:26,195 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 734, in format
+2018-08-10 16:41:26,197 ERROR        return fmt.format(record)
+2018-08-10 16:41:26,200 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 465, in format
+2018-08-10 16:41:26,202 ERROR        record.message = record.getMessage()
+2018-08-10 16:41:26,204 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 329, in getMessage
+2018-08-10 16:41:26,207 ERROR        msg = msg % self.args
+2018-08-10 16:41:26,209 ERROR    TypeError: not all arguments converted during string formatting
+2018-08-10 16:41:26,212 ERROR    Logged from file HomeSensorRFReceiver.py, line 84
+2018-08-10 16:41:26,215 INFO     Got payload size=6 value="698.00"
+2018-08-10 16:41:26,218 INFO     Sent response.
+2018-08-10 16:41:26,220 INFO     698.0
+2018-08-10 16:41:36,214 ERROR    Traceback (most recent call last):
+2018-08-10 16:41:36,216 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 861, in emit
+2018-08-10 16:41:36,219 ERROR        msg = self.format(record)
+2018-08-10 16:41:36,221 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 734, in format
+2018-08-10 16:41:36,223 ERROR        return fmt.format(record)
+2018-08-10 16:41:36,226 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 465, in format
+2018-08-10 16:41:36,228 ERROR        record.message = record.getMessage()
+2018-08-10 16:41:36,231 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 329, in getMessage
+2018-08-10 16:41:36,233 ERROR        msg = msg % self.args
+2018-08-10 16:41:36,236 ERROR    TypeError: not all arguments converted during string formatting
+2018-08-10 16:41:36,238 ERROR    Logged from file HomeSensorRFReceiver.py, line 84
+2018-08-10 16:41:36,241 INFO     Got payload size=6 value="698.00"
+2018-08-10 16:41:36,246 INFO     Sent response.
+2018-08-10 16:41:36,248 INFO     698.0
+2018-08-10 16:41:46,239 ERROR    Traceback (most recent call last):
+2018-08-10 16:41:46,242 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 861, in emit
+2018-08-10 16:41:46,245 ERROR        msg = self.format(record)
+2018-08-10 16:41:46,247 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 734, in format
+2018-08-10 16:41:46,250 ERROR        return fmt.format(record)
+2018-08-10 16:41:46,252 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 465, in format
+2018-08-10 16:41:46,254 ERROR        record.message = record.getMessage()
+2018-08-10 16:41:46,257 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 329, in getMessage
+2018-08-10 16:41:46,259 ERROR        msg = msg % self.args
+2018-08-10 16:41:46,262 ERROR    TypeError: not all arguments converted during string formatting
+2018-08-10 16:41:46,264 ERROR    Logged from file HomeSensorRFReceiver.py, line 84
+2018-08-10 16:41:46,267 INFO     Got payload size=6 value="698.00"
+2018-08-10 16:41:46,271 INFO     Sent response.
+2018-08-10 16:41:46,273 INFO     698.0
+2018-08-10 16:41:56,268 ERROR    Traceback (most recent call last):
+2018-08-10 16:41:56,270 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 861, in emit
+2018-08-10 16:41:56,273 ERROR        msg = self.format(record)
+2018-08-10 16:41:56,296 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 734, in format
+2018-08-10 16:41:56,299 ERROR        return fmt.format(record)
+2018-08-10 16:41:56,301 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 465, in format
+2018-08-10 16:41:56,304 ERROR        record.message = record.getMessage()
+2018-08-10 16:41:56,320 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 329, in getMessage
+2018-08-10 16:41:56,323 ERROR        msg = msg % self.args
+2018-08-10 16:41:56,325 ERROR    TypeError: not all arguments converted during string formatting
+2018-08-10 16:41:56,328 ERROR    Logged from file HomeSensorRFReceiver.py, line 84
+2018-08-10 16:41:56,331 INFO     Got payload size=6 value="698.00"
+2018-08-10 16:41:56,334 INFO     Sent response.
+2018-08-10 16:41:56,336 INFO     698.0
+2018-08-10 16:42:01,354 ERROR    Traceback (most recent call last):
+2018-08-10 16:42:01,364 ERROR      File "./HomeSensorRFReceiver.py", line 141, in <module>
+2018-08-10 16:42:01,367 ERROR    try_read_data()
+2018-08-10 16:42:01,369 ERROR      File "./HomeSensorRFReceiver.py", line 76, in try_read_data
+2018-08-10 16:42:01,372 ERROR    if radio.available():
+2018-08-10 16:42:01,375 ERROR    KeyboardInterrupt
+2018-08-10 16:42:56,289 INFO     Starting Soil Moisture Sensor Receiver
+2018-08-10 16:42:56,292 INFO     Starting Home Automation RF Receiver service
+2018-08-10 16:42:56,420 INFO     Role: Pong Back, awaiting transmission
+2018-08-10 16:42:58,846 ERROR    Traceback (most recent call last):
+2018-08-10 16:42:58,848 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 861, in emit
+2018-08-10 16:42:58,856 ERROR        msg = self.format(record)
+2018-08-10 16:42:58,858 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 734, in format
+2018-08-10 16:42:58,861 ERROR        return fmt.format(record)
+2018-08-10 16:42:58,864 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 465, in format
+2018-08-10 16:42:58,866 ERROR        record.message = record.getMessage()
+2018-08-10 16:42:58,869 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 329, in getMessage
+2018-08-10 16:42:58,871 ERROR        msg = msg % self.args
+2018-08-10 16:42:58,873 ERROR    TypeError: not all arguments converted during string formatting
+2018-08-10 16:42:58,876 ERROR    Logged from file HomeSensorRFReceiver.py, line 84
+2018-08-10 16:42:58,879 INFO     Got payload size=6 value="698.00"
+2018-08-10 16:42:58,882 INFO     Sent response.
+2018-08-10 16:42:58,885 INFO     698.0
+2018-08-10 16:43:08,876 ERROR    Traceback (most recent call last):
+2018-08-10 16:43:08,878 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 861, in emit
+2018-08-10 16:43:08,881 ERROR        msg = self.format(record)
+2018-08-10 16:43:08,883 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 734, in format
+2018-08-10 16:43:08,886 ERROR        return fmt.format(record)
+2018-08-10 16:43:08,888 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 465, in format
+2018-08-10 16:43:08,891 ERROR        record.message = record.getMessage()
+2018-08-10 16:43:08,893 ERROR      File "/usr/lib/python2.7/logging/__init__.py", line 329, in getMessage
+2018-08-10 16:43:08,896 ERROR        msg = msg % self.args
+2018-08-10 16:43:08,899 ERROR    TypeError: not all arguments converted during string formatting
+2018-08-10 16:43:08,901 ERROR    Logged from file HomeSensorRFReceiver.py, line 84
+2018-08-10 16:43:08,904 INFO     Got payload size=6 value="698.00"
+2018-08-10 16:43:08,907 INFO     Sent response.
+2018-08-10 16:43:08,910 INFO     698.0
+2018-08-10 16:43:10,108 ERROR    Traceback (most recent call last):
+2018-08-10 16:43:10,111 ERROR      File "./HomeSensorRFReceiver.py", line 141, in <module>
+2018-08-10 16:43:10,113 ERROR    try_read_data()
+2018-08-10 16:43:10,116 ERROR      File "./HomeSensorRFReceiver.py", line 76, in try_read_data
+2018-08-10 16:43:10,119 ERROR    if radio.available():
+2018-08-10 16:43:10,121 ERROR    KeyboardInterrupt
+2018-08-10 16:44:59,467 INFO     Starting Soil Moisture Sensor Receiver
+2018-08-10 16:44:59,470 INFO     Starting Home Automation RF Receiver service
+2018-08-10 16:44:59,598 INFO     Role: Pong Back, awaiting transmission
+2018-08-10 16:45:14,509 ERROR    Unexpected error
+2018-08-10 16:45:14,512 INFO     Got payload size=6 value="698.00"
+2018-08-10 16:45:14,515 INFO     Sent response.
+2018-08-10 16:45:14,518 INFO     698.0
+2018-08-10 16:45:24,507 ERROR    Unexpected error
+2018-08-10 16:45:24,510 INFO     Got payload size=6 value="698.00"
+2018-08-10 16:45:24,514 INFO     Sent response.
+2018-08-10 16:45:24,516 INFO     698.0
+2018-08-10 16:45:25,539 ERROR    Traceback (most recent call last):
+2018-08-10 16:45:25,541 ERROR      File "./HomeSensorRFReceiver.py", line 141, in <module>
+2018-08-10 16:45:25,544 ERROR    try_read_data()
+2018-08-10 16:45:25,547 ERROR      File "./HomeSensorRFReceiver.py", line 75, in try_read_data
+2018-08-10 16:45:25,549 ERROR    def try_read_data(channel=1):
+2018-08-10 16:45:25,552 ERROR    KeyboardInterrupt
+2018-08-10 16:45:48,822 INFO     Starting Soil Moisture Sensor Receiver
+2018-08-10 16:45:48,825 INFO     Starting Home Automation RF Receiver service
+2018-08-10 16:45:48,952 INFO     Role: Pong Back, awaiting transmission
+2018-08-10 16:45:55,495 ERROR    Unexpected error
+2018-08-10 16:45:55,498 INFO     Got payload size=6 value="698.00"
+2018-08-10 16:45:55,501 INFO     Sent response.
+2018-08-10 16:45:55,504 INFO     698.0
+2018-08-10 16:45:55,507 ERROR    Traceback (most recent call last):
+2018-08-10 16:45:55,509 ERROR      File "./HomeSensorRFReceiver.py", line 141, in <module>
+2018-08-10 16:45:55,512 ERROR    try_read_data()
+2018-08-10 16:45:55,514 ERROR      File "./HomeSensorRFReceiver.py", line 100, in try_read_data
+2018-08-10 16:45:55,517 ERROR    if x is not None:
+2018-08-10 16:45:55,520 ERROR    UnboundLocalError
+2018-08-10 16:45:55,522 ERROR    :
+2018-08-10 16:45:55,524 ERROR    local variable 'x' referenced before assignment
