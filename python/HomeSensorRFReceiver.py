@@ -9,11 +9,39 @@
 # HM - Humidity
 # TP - Temperature
 # LI - Light Intensity
-
 from __future__ import print_function
+import logging
+import logging.handlers
+import sys
 import time
 from RF24 import *
 import RPi.GPIO as GPIO
+import MySQLdb
+
+LOG_FILENAME = "sensors.log"
+LOG_LEVEL = logging.INFO
+
+logger = logging.getLogger(__name__)
+logger.setLevel(LOG_LEVEL)
+handler = logging.handlers.TimedRotatingFileHandler(LOG_FILENAME, when="midnight", backupCount=3)
+formatter = logging.Formatter('%(asctime)s %(levelname)-8s %(message)s')
+handler.setFormatter(formatter)
+logger.addHandler(handler)
+
+class MyLogger(object):
+        def __init__(self, logger, level):
+                """Needs a logger and a logger level."""
+                self.logger = logger
+                self.level = level
+
+        def write(self, message):
+                if message.rstrip() != "":
+                        self.logger.log(self.level, message.rstrip())
+
+sys.stdout = MyLogger(logger, logging.INFO)
+sys.stderr = MyLogger(logger, logging.ERROR)
+
+logger.info("Starting Soil Moisture Sensor Receiver")
 
 irq_gpio_pin = None
 
@@ -41,25 +69,44 @@ radio = RF24(22, 0);
 #irq_gpio_pin = RPI_BPLUS_GPIO_J8_18
 #irq_gpio_pin = 24
 
+x = None
+conn = None
+
 ##########################################
-def try_read_data(channel=0):
-    if radio.available():
-        while radio.available():
-            len = radio.getDynamicPayloadSize()
-            receive_payload = radio.read(len)
-            print('Got payload size={} value="{}"'.format(len, receive_payload.decode('utf-8')))
-            # First, stop listening so we can talk
-            radio.stopListening()
+def try_read_data(channel=1):
+	if radio.available():
+		while radio.available():
+			try:
+				if conn is None:
+					#logger.info("Initializing database connection");
+					conn = MySQLdb.connect(host="127.0.0.1", user="root", passwd="1017Gv1154", db="sensors_lu")
+					x = conn.cursor()
+			except:
+				logger.error("Unexpected error")
+				conn = None
 
-            # Send the final one back.
-            radio.write(receive_payload)
-            print('Sent response.')
+			len = radio.getDynamicPayloadSize()
+			receive_payload = radio.read(len)
+			print('Got payload size={} value="{}"'.format(len, receive_payload.decode('utf-8')))
+            		# First, stop listening so we can talk
+            		radio.stopListening()
 
-            # Now, resume listening so we catch the next packets.
-            radio.startListening()
+			# Send the final one back.
+			radio.write(receive_payload)
+            		print('Sent response.')
+
+	    		soil_moisture_received = receive_payload.decode('utf-8')
+	    		soil_moisture = float(soil_moisture_received)
+			logger.info(soil_moisture)
+			if x is not None:
+				x.execute("""INSERT INTO measure (measureDate, sensor_id, soil_moisture) VALUES (%s,%s,%s)""",(time.strftime('%Y-%m-%d %H:%M:%S'),'SM01',soil_moisture))
+				conn.commit()
+
+            		# Now, resume listening so we catch the next packets.
+            		radio.startListening()
 
 # Communication Pipes
-pipes = [0xF0F0F0F0E1, 0xF0F0F0F0D2]
+pipes = [0xF0F0F0F0E1, 0xF0F0F0F0D2, 0xF0F0F0F0C2]
 min_payload_size = 4
 max_payload_size = 32
 
@@ -83,14 +130,13 @@ if irq_gpio_pin is not None:
 	GPIO.add_event_detect(irq_gpio_pin, GPIO.FALLING, callback=try_read_data)
 
 radio.openWritingPipe(pipes[1])
+radio.openReadingPipe(0,pipes[1])
 radio.openReadingPipe(1,pipes[0])
+radio.openReadingPipe(2,pipes[2])
 radio.startListening()
 
 # forever loop
 while 1:
-	# Pong back role.  Receive each packet, dump it out, and send it back
-
-	# if there is data ready
 	if irq_gpio_pin is None:
 		# no irq pin is set up -> poll it
 		try_read_data()
