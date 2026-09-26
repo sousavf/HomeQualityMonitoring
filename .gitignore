@@ -1,0 +1,5 @@
+# Sensor logs may contain private household telemetry
+*.log
+
+# Arduino build output
+arduino/**/build-*/
